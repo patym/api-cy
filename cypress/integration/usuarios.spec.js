@@ -49,7 +49,7 @@ describe('Testes da Funcionalidade Usuários', () => {
      });
 
      it('Deve validar um usuário com email inválido', () => {
-          cy.cadastrarUsuario(token, 'Usuario Novo 1', "teste8@email.com", "54321", "false")
+          cy.cadastrarUsuario(token, 'Usuario Novo 1', "teste@email.com", "54321", "false")
           .then((response) => {
                expect(response.status).to.equal(400)
                expect(response.body.message).to.equal('Este email já está sendo usado')
